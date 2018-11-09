@@ -58,26 +58,3 @@ if has('vim_starting')
     " 置換モード時に非点滅の下線タイプのカーソル
     let &t_SR .= "\e[4 q"
 endif
-
-"" terminal特殊設定
-"
-"" terminalならfiletype=terminal
-"function! s:bufnew()
-"    if &buftype == "terminal" && &filetype == ""
-"        set filetype=terminal
-"    endif
-"endfunction
-"
-"" terminal固有設定
-"function! s:filetype()
-"   set modifiable
-"   set write
-"endfunction
-"
-"augroup my-terminal
-"    autocmd!
-"   " BufNew の時点では 'buftype' が設定されていないので timer イベントでごまかすなど…
-"    autocmd BufNew * call timer_start(0, { -> s:bufnew() })
-"    autocmd FileType terminal call s:filetype()
-"augroup END
-

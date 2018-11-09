@@ -51,16 +51,7 @@ hook_source = '''
 source ~/.msys/plugins/denite.rc.vim
 '''
 hook_add = '''
-    nnoremap <silent> <Space>u :<C-u>Denite file_rec buffer<CR>
-    nnoremap <silent> <Space>g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
-    nnoremap <silent> <Space>r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
-    nnoremap <silent> <C-n> :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
-    nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
-    nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/.msys<CR>
-    nnoremap <silent> <Space>w :<C-u>Denite file_rec:~/work<CR>
-    call denite#custom#map('insert', '<C-j>','<denite:move_to_next_line>', 'noremap')
-    call denite#custom#map('insert', '<C-k>','<denite:move_to_previous_line>', 'noremap')
-    call denite#custom#map('insert', '<C-t>','<denite:do_action:tabopen>')
+source ~/.msys/plugins/denite_keymap.rc.vim
 '''
 
 # ==========================================================
