@@ -30,5 +30,4 @@ syntax enable
 source ~/.msys/myfunction.rc.vim
 source ~/.msys/options.rc.vim
 source ~/.msys/keymap.rc.vim
-
-source ~/.msys/test.rc.vim
+source ~/test.rc.vim

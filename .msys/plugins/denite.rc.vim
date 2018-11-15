@@ -11,6 +11,6 @@ endif
 call denite#custom#source('file_rec','matchers',['matcher_fuzzy','matcher_ignore_globs'])
 call denite#custom#filter('matcher_ignore_globs','ignore_globs',
         \ [
-        \ '.git/', 'build/', '__pycache__/', 'node_modules/',
+        \ '.git/', 'build/', '__pycache__/', 'node_modules/', '.svn/',
         \ 'images/', 'img/',
-\ '*.o', '*.make' ])
+        \ '*.o', '*.make' ])
