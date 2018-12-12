@@ -11,7 +11,7 @@ nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -
 
 " ---list---
 " current list
-nnoremap <silent> <Space>u :<C-u>Denite file_rec buffer<CR>
+nnoremap <silent> <Space>u :<C-u>Denite file_rec<CR>
 " vim config list
 nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot<CR>
 " work list
@@ -23,3 +23,9 @@ call denite#custom#map('insert', '<C-j>','<denite:move_to_next_line>', 'noremap'
 call denite#custom#map('insert', '<C-k>','<denite:move_to_previous_line>', 'noremap')
 " new tab open
 call denite#custom#map('insert', '<C-t>','<denite:do_action:tabopen>')
+" toggle_select
+call denite#custom#map('insert', '<C-n>', '<denite:toggle_select>')
+call denite#custom#map('insert', '<C-a>', '<denite:toggle_select_all>')
+
+" ---denite-git---
+command! Gitstatus Denite gitstatus

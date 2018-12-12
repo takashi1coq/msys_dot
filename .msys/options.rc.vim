@@ -30,7 +30,7 @@ set cursorline
 nnoremap x "_x
 
 "ターミナル以外はバッファ開いたらパスをチェンジ
-au BufEnter * if &buftype !=# 'terminal' | execute 'lcd ' fnameescape(expand('%:p:h')) | endif
+"au BufEnter * if &buftype !=# 'terminal' | execute 'lcd ' fnameescape(expand('%:p:h')) | endif
 
 " 標準カラースキームを使用
 colorscheme desert
@@ -40,11 +40,6 @@ colorscheme desert
 set clipboard+=unnamed
 "C-vで最新レジスタ貼り付け
 noremap! <C-v> <C-r>*
-
-
-" ------filetypeの存在しないものを追加する------
-"au BufNewFile,BufRead *.toml setf conf
-
 
 " ------msys特殊対応------
 " bs効かない問題

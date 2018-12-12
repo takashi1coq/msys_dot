@@ -36,4 +36,10 @@ vnoremap <silent> <C-p> "0p<CR>
 tnoremap jj <C-\><C-n>
 " Escをjj
 inoremap jj <ESC>
-
+" 再読み込み
+nnoremap <silent> <F2> :source $MYVIMRC<CR>
+" コード入力モード
+noremap! <C-t> <C-v>
+" バッファの移動
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
