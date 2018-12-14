@@ -41,5 +41,5 @@ nnoremap <silent> <F2> :source $MYVIMRC<CR>
 " コード入力モード
 noremap! <C-t> <C-v>
 " バッファの移動
-nnoremap <silent> <C-j> :bprev<CR>
-nnoremap <silent> <C-k> :bnext<CR>
+nnoremap <silent> <C-j> :silent bprev<CR>
+nnoremap <silent> <C-k> :silent bnext<CR>

@@ -6,7 +6,7 @@
 
 readonly CMDNAME=`basename $0`
 if [ $# -ne 5 ]; then
-    echo "Usage: $CMDNAME user host flg fromDir toDir" 1>&2
+    echo "Usage: $CMDNAME user host flg fromFileOrDir toDir" 1>&2
     exit 1
 fi
 

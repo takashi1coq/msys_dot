@@ -32,9 +32,6 @@ nnoremap x "_x
 "ターミナル以外はバッファ開いたらパスをチェンジ
 "au BufEnter * if &buftype !=# 'terminal' | execute 'lcd ' fnameescape(expand('%:p:h')) | endif
 
-" 標準カラースキームを使用
-colorscheme desert
-
 " ------関連性が高いのでこちらに記載vim用------
 " クリップボード共有
 set clipboard+=unnamed
