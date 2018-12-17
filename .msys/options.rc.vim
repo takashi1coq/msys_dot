@@ -19,6 +19,8 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ENC=%{&fileencoding}]\ [
 "タブもろもろ可視化
 set list
 set listchars=tab:>-,trail:_,extends:>,precedes:<
+" タブページを常に表示
+set showtabline=2
 "タブをスベース4
 set expandtab
 set tabstop=4

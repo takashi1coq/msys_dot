@@ -4,7 +4,7 @@ nnoremap <silent> <Space>g :<C-u>Denite grep -buffer-name=search-buffer-denite<C
 " visual grep
 vnoremap <silent> <Space>g :<C-u>DeniteCursorWord grep -buffer-name=search-buffer-denite<CR>
 " grep buffer replay
-nnoremap <silent> <Space>r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+nnoremap <silent> <Space>r :<C-u>Denite -resume -buffer-name=search-buffer-denite -highlight-mode-insert=Search<CR>
 " grep list jump
 nnoremap <silent> <C-n> :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
 nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
@@ -13,9 +13,9 @@ nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -
 " current list
 nnoremap <silent> <Space>u :<C-u>Denite file_rec<CR>
 " vim config list
-nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot<CR>
+nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot -highlight-mode-insert=Search<CR>
 " work list
-nnoremap <silent> <Space>w :<C-u>Denite file_rec:~/work<CR>
+nnoremap <silent> <Space>w :<C-u>Denite file_rec:~/work -highlight-mode-insert=Search<CR>
 
 " ---keymap---
 " list move

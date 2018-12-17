@@ -7,9 +7,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'tomasr/molokai'
 hook_add = '''
-syntax enable
-colorscheme molokai
-set t_Co=256
+source ~/.msys/plugins/morokai.rc.vim
 '''
 
 # ==========================================================
@@ -42,8 +40,8 @@ repo = 'airblade/vim-rooter'
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 hook_add = '''
-nnoremap <silent> <Space>f :<C-u>Defx -listed -resume -buffer-name=tab`tabpagenr()`
-\ -show-ignored-files -split=tab `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nnoremap <silent> <Space>f :<C-u>Defx -listed -resume -buffer-name=mydefx
+\ -show-ignored-files -split=tab ~/<CR>
 '''
 [plugins.ftplugin]
 defx = '''
