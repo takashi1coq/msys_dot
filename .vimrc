@@ -1,3 +1,9 @@
+" augroupの初期化が行えないためグループ化は断念
+" ver7のバグ？var8だがcygwin版なので何とも言えず
+
+let g:python_host_prog = ''
+let g:python3_host_prog = system('which python3 | tr -d "\n"')
+
 let s:dein_cache_path = expand('~/.cache/msys/dein')
 
 let s:dein_dir = s:dein_cache_path

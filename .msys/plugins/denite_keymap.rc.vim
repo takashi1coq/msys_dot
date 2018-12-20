@@ -13,9 +13,7 @@ nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -
 " current list
 nnoremap <silent> <Space>u :<C-u>Denite file_rec<CR>
 " vim config list
-nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot -highlight-mode-insert=Search<CR>
-" work list
-nnoremap <silent> <Space>w :<C-u>Denite file_rec:~/work -highlight-mode-insert=Search<CR>
+nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot<CR>
 
 " ---keymap---
 " list move

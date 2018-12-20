@@ -32,5 +32,5 @@ command! -nargs=0 CopyFileName call CopyFileName()
 " いらない空白削除コマンド
 command! EndSpaceDel :%s/\s\+$//ge
 
-"Rename コマンド
-command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
+" dein refresh
+command! -nargs=0 DeinRefreshRuntimePath call dein#recache_runtimepath()
