@@ -1,5 +1,4 @@
-" augroupの初期化が行えないためグループ化は断念
-" ver7のバグ？var8だがcygwin版なので何とも言えず
+" autocmd対策する
 
 let g:python_host_prog = ''
 let g:python3_host_prog = system('which python3 | tr -d "\n"')
@@ -33,7 +32,7 @@ endif
 filetype plugin indent on
 syntax enable
 
-source ~/.msys/myfunction.rc.vim
-source ~/.msys/options.rc.vim
-source ~/.msys/keymap.rc.vim
+source ~/.msys/rc/myfunction.rc.vim
+source ~/.msys/rc/options.rc.vim
+source ~/.msys/rc/keymap.rc.vim
 source ~/test.rc.vim

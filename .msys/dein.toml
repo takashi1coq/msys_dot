@@ -8,7 +8,6 @@ repo = 'Shougo/dein.vim'
 repo = 'tomasr/molokai'
 hook_add = '''
 source ~/.msys/plugins/molokai.rc.vim
-let loaded_matchparen = 1
 '''
 
 # ==========================================================
@@ -24,10 +23,9 @@ source ~/.msys/plugins/memolist.rc.vim
 [[plugins]]
 repo = 'kannokanno/previm'
 hook_add = '''
-au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'start Firefox'
 let g:previm_disable_default_css = 1
-let g:previm_custom_css_path = '~/.msys/plugins/previm_custom.css'
+let g:previm_custom_css_path = '~/.msys/previm_custom.css'
 nnoremap <silent> <Space>p :<C-u>PrevimOpen<CR>
 '''
 
@@ -80,18 +78,15 @@ repo = 'neoclide/denite-git'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
-hook_source = '''
-'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_add = '''
-let g:deoplete#enable_at_startup = 1
 source ~/.msys/plugins/deoplete.rc.vim
 '''
 
 # ==========================================================
-# deoplete on Vim8
+# python plugins on Vim8
 # ==========================================================
 
 [[plugins]]

@@ -12,3 +12,5 @@ endfunction
 
 nnoremap <silent> <Space>f :call DefxExplorer("`expand('%:p:h')`")<CR>
 nnoremap <silent> <Space>w :call DefxExplorer("~/work")<CR>
+
+set splitright

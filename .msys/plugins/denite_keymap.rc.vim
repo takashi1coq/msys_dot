@@ -4,7 +4,7 @@ nnoremap <silent> <Space>g :<C-u>Denite grep -buffer-name=search-buffer-denite<C
 " visual grep
 vnoremap <silent> <Space>g :<C-u>DeniteCursorWord grep -buffer-name=search-buffer-denite<CR>
 " grep buffer replay
-nnoremap <silent> <Space>r :<C-u>Denite -resume -buffer-name=search-buffer-denite -highlight-mode-insert=Search<CR>
+nnoremap <silent> <Space>r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
 " grep list jump
 nnoremap <silent> <C-n> :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
 nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>

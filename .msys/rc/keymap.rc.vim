@@ -37,7 +37,7 @@ tnoremap jj <C-\><C-n>
 " Escをjj
 inoremap jj <ESC>
 " 再読み込み
-nnoremap <silent> <F2> :source $MYVIMRC<CR>
+nnoremap <silent> <F2> :Myvimrc<CR>
 " コード入力モード
 noremap! <C-t> <C-v>
 " バッファの移動

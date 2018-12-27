@@ -31,6 +31,11 @@ set cursorline
 " x削除でレジスタに格納しない
 nnoremap x "_x
 
+" filetype setting
+augroup MyFileType
+    au BufRead,BufNewFile *.md set filetype=markdown
+augroup END
+
 "ターミナル以外はバッファ開いたらパスをチェンジ
 "au BufEnter * if &buftype !=# 'terminal' | execute 'lcd ' fnameescape(expand('%:p:h')) | endif
 

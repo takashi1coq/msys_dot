@@ -7,6 +7,6 @@ do
     ln -sfn $HOME/msys_dot/$file $HOME/$file
 done
 
-echo -e '"set verbosefile=/tmp/vim.log' > ~/test.rc.vim
-echo -e '"set verbose=20' >> ~/test.rc.vim
+#echo -e '"set verbosefile=/tmp/vim.log' > ~/test.rc.vim
+#echo -e '"set verbose=20' >> ~/test.rc.vim
 
