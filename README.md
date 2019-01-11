@@ -38,6 +38,6 @@ XferCommand = /usr/bin/curl -x proxy.example.com:port -C - -f %u > %o
 
 - フォントHGゴシック、太字、12pt
 
-### kaoriya gvim
+## kaoriya gvim
 
 - `_vimrc`,`_gvimrc`を設置
