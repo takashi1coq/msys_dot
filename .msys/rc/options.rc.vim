@@ -34,6 +34,7 @@ nnoremap x "_x
 " filetype setting
 augroup MyFileType
     au BufRead,BufNewFile *.md set filetype=markdown
+    au FileType defx setlocal nobuflisted
 augroup END
 
 "ターミナル以外はバッファ開いたらパスをチェンジ

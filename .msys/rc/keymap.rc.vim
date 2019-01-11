@@ -32,8 +32,9 @@ nmap * *zz
 nmap # #zz
 " Ctrl-p で差し替え後も連続コピー
 vnoremap <silent> <C-p> "0p<CR>
-" terminal escでノーマルモード
-tnoremap jj <C-\><C-n>
+" terminal jjでノーマルモード
+tnoremap <silent> <ESC> <C-\><C-n>
+command! -nargs=* Terminal tabnew | term ++curwin <args>
 " Escをjj
 inoremap jj <ESC>
 " 再読み込み

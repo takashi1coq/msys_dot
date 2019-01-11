@@ -1,0 +1,10 @@
+"winvimの半角はMSゴシックに設定
+set guifont=MS_Gothic:h11
+"winvimの全角もMSゴシックに設定
+set guifontwide=MS_Gothic:h11
+"winvimウィンドウサイズ
+set columns=180
+set lines=60
+
+" 標準カラースキーム
+colorscheme desert
