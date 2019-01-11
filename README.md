@@ -1,10 +1,10 @@
-# 設定方法
+## cygwin
 
 ### pacman を使用可能にする（プロキシ設定されている場合`-x`オプションを使用）
 
 - msys64/etc/pacman.conf
 ```
-XferCommand = /usr/bin/curl -x proxy.com:port -C - -f %u > %o
+XferCommand = /usr/bin/curl -x proxy.example.com:port -C - -f %u > %o
 ```
 
 ### msysにてシンボリックリンクを作成できるようにする
@@ -31,8 +31,8 @@ XferCommand = /usr/bin/curl -x proxy.com:port -C - -f %u > %o
     - http://d.hatena.ne.jp/perlcodesample/20180806/1533509897
     - pip3 install --upgrade neovim ※deoplete用に必要
 - git プロキシ管理
-    - git config --global http.proxy http://proxy.example.com:8080
-    - git config --global https.proxy http://proxy.example.com:8080
+    - git config --global http.proxy http://proxy.example.com:port
+    - git config --global https.proxy http://proxy.example.com:port
 
 ### msys option
 
