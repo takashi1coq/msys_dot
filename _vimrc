@@ -62,7 +62,7 @@ autocmd FileType help nnoremap <buffer> q <C-w>c
 nnoremap <sid>(command-line-enter) q:
 nmap ;; <sid>(command-line-enter)
 "新しいタブ
-nnoremap <silent>tt :<C-u>tabnew<Cr>
+nnoremap <silent>tt :<C-u>$tabnew<Cr>
 "現在のタブ以外全て閉じる
 nnoremap <silent>to :<C-u>tabo<Cr>
 " gf 新しいタブで開く

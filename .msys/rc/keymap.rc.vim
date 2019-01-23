@@ -10,10 +10,10 @@ autocmd FileType help nnoremap <buffer> q <C-w>c
 "ウィドウ間の移動をwとする
 nnoremap <C-w> <C-w>w
 "新しいタブをtt
-nnoremap tt :<C-u>tabnew<Cr>
+nnoremap tt :<C-u>$tabnew<Cr>
 "アクティブ以外閉じるをto
 nnoremap to :<C-u>tabo<Cr>
-"gfを必ず新しいタブで開く
+"gfで新しいタブで開く
 nnoremap gf <C-w>gf
 "aaで全選択
 nmap <silent> aa ggVG$
@@ -34,7 +34,7 @@ nmap # #zz
 vnoremap <silent> <C-p> "0p<CR>
 " terminal jjでノーマルモード
 tnoremap <silent> <ESC> <C-\><C-n>
-command! -nargs=* Terminal tabnew | term ++curwin <args>
+command! -nargs=* Terminal $tabnew | term ++curwin <args>
 " Escをjj
 inoremap jj <ESC>
 " 再読み込み

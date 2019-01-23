@@ -1,14 +1,14 @@
 " test
 setlocal nobuflisted
 
-" defx key mapping
+" --- defx key mapping
+
 nnoremap <silent><buffer><expr> j line('.') == line('$') ? 'gg' : 'j'
 nnoremap <silent><buffer><expr> k line('.') == 1 ? 'G' : 'k'
 nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])
 nnoremap <silent><buffer><expr> l defx#do_action('open_directory')
-nnoremap <silent><buffer><expr> <CR> defx#do_action('open', 'wincmd w \| drop'). '<C-w>w'. ':<C-u>q<CR>'
-nnoremap <silent><buffer><expr> <C-t> defx#do_action('open', 'tabnew')
-nnoremap <silent><buffer><expr> <C-y> defx#do_action('drop')
+nnoremap <silent><buffer><expr> <CR> defx#do_action('drop')
+nnoremap <silent><buffer><expr> <C-t> defx#do_action('open', '$tabnew')
 nnoremap <silent><buffer><expr> N defx#do_action('new_file')
 nnoremap <silent><buffer><expr> D defx#do_action('new_directory')
 nnoremap <silent><buffer><expr> r defx#do_action('rename')
@@ -20,7 +20,7 @@ nnoremap <silent><buffer><expr> <ESC><ESC> defx#do_action('quit')
 
 nnoremap <silent><buffer><expr> ! defx#do_action('execute_command')
 
-" filetype dexf disable keymap
+" --- filetype dexf disable keymap
 
 " baffer chenge disable
 nnoremap <buffer> <C-j> <Nop>

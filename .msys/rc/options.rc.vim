@@ -15,21 +15,28 @@ set fileencodings=utf-8,euc-jp,ucs-bom,iso-2022-jp,sjis,cp932,latin1
 set laststatus=2
 " ステータスラインの内容
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ENC=%{&fileencoding}]\ [%{getcwd()}]\ [LOW=%l/%L]
-
-"タブもろもろ可視化
+"タブ<TAB>等もろもろ可視化
 set list
 set listchars=tab:>-,trail:_,extends:>,precedes:<
-" タブページを常に表示
-set showtabline=2
 "タブをスベース4
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" ---- tabpage
+" タブページを常に表示
+set showtabline=2
+" tabline
+set tabline=%!MakeTabLine()
+
+
 " カーソル行をハイライト
 set cursorline
 " x削除でレジスタに格納しない
 nnoremap x "_x
+" windowは右に開く
+set splitright
 
 " filetype setting
 augroup MyFileType

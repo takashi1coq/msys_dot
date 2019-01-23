@@ -4,13 +4,18 @@ function! DefxExplorer(dir)
         \ 'Defx',
         \ '-buffer-name=myDefx',
         \ '-show-ignored-files',
-        \ '-split=vertical',
-        \ '-columns=git:mark:filename:type:time:size'
+        \ '-split=no',
+        \ '-columns=git:mark:filename:type:time'
         \ ], ' ')
+    $tabnew
     execute l:cmd. ' '. a:dir
 endfunction
 
 nnoremap <silent> <Space>f :call DefxExplorer("`expand('%:p:h')`")<CR>
 nnoremap <silent> <Space>w :call DefxExplorer("~/work")<CR>
 
-set splitright
+" filename sizeを指定
+call defx#custom#column('filename', {
+      \ 'min_width': 35,
+      \ 'max_width': 35,
+      \ })
