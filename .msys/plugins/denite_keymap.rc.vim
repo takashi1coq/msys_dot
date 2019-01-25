@@ -14,21 +14,27 @@ nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -
 nnoremap <silent> <Space>u :<C-u>Denite file_rec<CR>
 " vim config list
 nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot<CR>
+" buffer list
+nnoremap <silent> <Space>b :<C-u>Denite buffer<CR>
 
 " ---keymap---
 " list move
 call denite#custom#map('insert', '<C-j>','<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-k>','<denite:move_to_previous_line>', 'noremap')
+
 " new tab open
 call denite#custom#map('insert', '<C-t>','<denite:do_action:my_tabopen>', 'noremap')
-call denite#custom#action('file_rec', 'my_tabopen', 'MyTabOpenDenite', {'is_quit' : v:true})
+call denite#custom#action('buffer,command,directory,file,openable,word',
+            \ 'my_tabopen',
+            \ 'MyTabOpenDenite',
+            \ {'is_quit' : v:true})
 function! MyTabOpenDenite(context) abort
-    let s:target = a:context['targets'][0]
-    let path = target['action__path']
-
-    if filereadable(path)
-        silent execute ':$tabnew '.path
-    endif
+    for target in a:context['targets']
+        let path = target['action__path']
+        if filereadable(path)
+            silent execute ':$tabnew'. path
+        endif
+    endfor
 endfunction
 
 " toggle_select

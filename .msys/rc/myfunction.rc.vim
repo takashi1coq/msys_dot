@@ -102,11 +102,20 @@ function! s:tabpage_label(n)
 
   " カレントバッファ
   let curbufnr = bufnrs[tabpagewinnr(a:n) - 1]  " tabpagewinnr() は 1 origin
+
+  " 前後だけfnameを表示する
+  let tab_targets = [tabpagenr() - 1, tabpagenr(), tabpagenr() + 1]
   let fname = fnamemodify(bufname(curbufnr), ':t')
+  if match(tab_targets, a:n) is -1
+    let fname = '-'
+  endif
+
+  " 無題表示
+  let fname = fname is '' ? 'NO NAME' : fname
 
   let label = ' '. no . mod . sp . fname. ' '
 
-  return '%' . a:n . 'X' . hi . label . '%T%#TabLineFill#'
+  return '%' . a:n . 'X' . hi . label . '%X%#TabLineFill#'
 endfunction
 
 function! MakeTabLine()
@@ -116,6 +125,3 @@ function! MakeTabLine()
   let info = expand('%:p:h')
   return tabpages . '%=' . info  " タブリストを左に、情報を右に表示
 endfunction
-
-" tabnew のコマンド化
-command! Tabnew :$tabnew

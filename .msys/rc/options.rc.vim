@@ -29,7 +29,8 @@ set shiftwidth=4
 set showtabline=2
 " tabline
 set tabline=%!MakeTabLine()
-
+" mouseでタブを閉じるためにONにする
+set mouse=a
 
 " カーソル行をハイライト
 set cursorline
