@@ -30,9 +30,19 @@ XferCommand = /usr/bin/curl -x proxy.example.com:port -C - -f %u > %o
     - errorからcrypt.hが存在しないことを確認。以下からlibcrypt-develであることを確認
     - http://d.hatena.ne.jp/perlcodesample/20180806/1533509897
     - pip3 install --upgrade neovim ※deoplete用に必要
+
 - git プロキシ管理
     - git config --global http.proxy http://proxy.example.com:port
     - git config --global https.proxy http://proxy.example.com:port
+
+- trans on vim
+    - pacman -S make
+    - git clone https://github.com/soimort/translate-shell/
+    - cd translate-shell
+    - make
+    - make install
+    - bashrc
+        - export $MYPROXY='proxy.example.com:port'
 
 ### msys option
 

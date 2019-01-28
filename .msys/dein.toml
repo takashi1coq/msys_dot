@@ -71,19 +71,30 @@ source ~/.msys/plugins/denite_keymap.rc.vim
 [[plugins]]
 repo = 'neoclide/denite-git'
 
+[[plugins]]
+repo = 'Shougo/junkfile.vim'
+on_source = 'denite.nvim'
+hook_add = '''
+  nnoremap <silent> <Space>e :<C-u>Denite junkfile:new junkfile<CR>
+'''
+
 # ==========================================================
 # deoplete
 # ==========================================================
-
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_ft = 'python'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_add = '''
 source ~/.msys/plugins/deoplete.rc.vim
 '''
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'
 
 # ==========================================================
 # python plugins on Vim8
