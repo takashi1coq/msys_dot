@@ -12,10 +12,14 @@ autocmd ColorScheme * highlight Visual ctermbg=239
 autocmd ColorScheme * highlight TabLine ctermbg=None
 " TabLineSel
 autocmd ColorScheme * highlight TabLineSel ctermbg=242
+" TabLineFill
+autocmd ColorScheme * highlight TabLineFill cterm=bold ctermbg=240 ctermfg=49
 " deniteMatchedChar
 autocmd ColorScheme * highlight deniteMatchedChar ctermbg=244
 " markdownValid
 autocmd ColorScheme * highlight markdownValid ctermbg=160
+" StatusLine
+autocmd ColorScheme * highlight StatusLine ctermbg=226
 
 colorscheme molokai
 
