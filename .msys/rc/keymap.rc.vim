@@ -11,6 +11,8 @@ autocmd FileType help nnoremap <buffer> q <C-w>c
 nnoremap <C-w> <C-w>w
 "新しいタブをtt
 nnoremap tt :<C-u>$tabnew<Cr>
+"windowごとタブを閉じる
+nnoremap tq :<C-u>tabc<Cr>
 "アクティブ以外閉じるをto
 nnoremap to :<C-u>tabo<Cr>
 "gfで新しいタブで開く

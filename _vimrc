@@ -78,6 +78,8 @@ command! Sjis set fileencoding=shift_jis
 command! U8 set fileencoding=utf-8
 " 末尾空白削除コマンド
 command! EndSpaceDel :%s/\s\+$//ge
+" コピペ差分
+command! DiffNewFile :vs | enew | difft | wincmd w | difft | wincmd w
 " ctr-v で最新レジスタ貼り付け 異端
 noremap! <C-v> <C-r>*
 noremap! <C-t> <C-v>
