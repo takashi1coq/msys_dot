@@ -48,3 +48,6 @@ nnoremap <silent> <C-j> :silent bprev<CR>
 nnoremap <silent> <C-k> :silent bnext<CR>
 " 日本語訳 ※ https://github.com/soimort/translate-shell/
 vnoremap <silent> <C-g> :w !trans -b -sl=en -tl=ja -x $MYPROXY<CR>
+"<F9>,<F10>,でタブそのものを移動
+nnoremap <silent> <F9> :<C-u>tabm -1<CR>
+nnoremap <silent> <F10> :<C-u>tabm +1<CR>

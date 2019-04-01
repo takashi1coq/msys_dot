@@ -71,6 +71,19 @@ noremap gf <C-w>gf
 noremap <C-w> <C-w>w
 " ウィンドウ回転
 nnoremap <silent>s <C-w>H
+" サイズ変更
+nnoremap <Up> <C-w>-
+nnoremap <Down> <C-w>+
+nnoremap <Right> <C-w><
+nnoremap <Left> <C-w>>
+" 閉じる
+nnoremap q <C-w>c
+"<F9>,<F10>,でタブそのものを移動
+nnoremap <silent> <F9> :<C-u>tabm -1<CR>
+nnoremap <silent> <F10> :<C-u>tabm +1<CR>
+" wrap設定の場合、一行づつ移動する
+nnoremap j gj
+nnoremap k gk
 
 "------------------オプション------------------
 " エンコード 切り替えコマンド
