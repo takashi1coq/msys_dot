@@ -51,3 +51,6 @@ vnoremap <silent> <C-g> :w !trans -b -sl=en -tl=ja -x $MYPROXY<CR>
 "<F9>,<F10>,でタブそのものを移動
 nnoremap <silent> <F9> :<C-u>tabm -1<CR>
 nnoremap <silent> <F10> :<C-u>tabm +1<CR>
+" mark
+nnoremap <F7> mF
+nnoremap <F8> 'F
