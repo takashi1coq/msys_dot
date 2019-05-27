@@ -54,3 +54,5 @@ nnoremap <silent> <F10> :<C-u>tabm +1<CR>
 " mark
 nnoremap <F7> mF
 nnoremap <F8> 'F
+" qで閉じる
+nnoremap q <C-w>c
