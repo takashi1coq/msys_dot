@@ -120,3 +120,39 @@ function! MakeTabLine()
   let info = expand('%:p:h')
   return tabpages . '%=' . info  " タブリストを左に、情報を右に表示
 endfunction
+
+" ==========================================================
+"  MyTabNew うんこ
+"  0:count
+"  1:path
+" ==========================================================
+command! -nargs=* MyTabNew call s:both_ends_tabnew(<f-args>)
+
+function! s:both_ends_tabnew(...)
+    let l:res = []
+    if a:0 >= 1
+        if filereadable(expand(a:000[0]))
+            call add(l:res, '0')
+        endif
+        for n in a:000
+            call add(l:res, n)
+        endfor
+    else
+        call add(l:res, '0')
+    endif
+    let num = l:res[0]
+    unlet l:res[0]
+    if len(l:res) != 0
+        for path in l:res
+            if expand('%:p') !=# ''
+                silent execute ':'. l:num. 'tabnew' .path
+            else
+                silent execute ':e'.path
+            endif
+        endfor
+    else
+        if expand('%:p') !=# ''
+            silent execute ':'. l:num. 'tabnew'
+        endif
+    endif
+endfunction

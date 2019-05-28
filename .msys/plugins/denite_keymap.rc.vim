@@ -11,11 +11,13 @@ nnoremap <silent> <C-b> :<C-u>Denite -resume -buffer-name=search-buffer-denite -
 
 " ---list---
 " current list
-nnoremap <silent> <Space>u :<C-u>Denite file_rec<CR>
-" vim config list
-nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot<CR>
+nnoremap <silent> <Space>u :<C-u>Denite file_rec -default-action=left_tabopen<CR>
 " buffer list
-nnoremap <silent> <Space>b :<C-u>Denite buffer<CR>
+nnoremap <silent> <Space>b :<C-u>Denite buffer -default-action=left_tabopen<CR>
+" vim config list
+nnoremap <silent> <Space>v :<C-u>Denite file_rec:~/msys_dot -default-action=left_tabopen<CR>
+" mark list
+nnoremap <silent> <Space>m :<C-u>Denite mark -default-action=left_tabopen<CR>
 
 " ---keymap---
 " list move
@@ -23,19 +25,34 @@ call denite#custom#map('insert', '<C-j>','<denite:move_to_next_line>', 'noremap'
 call denite#custom#map('insert', '<C-k>','<denite:move_to_previous_line>', 'noremap')
 
 " new tab open
-call denite#custom#map('insert', '<C-t>','<denite:do_action:my_tabopen>', 'noremap')
-call denite#custom#action('buffer,command,directory,file,openable,word',
-            \ 'my_tabopen',
-            \ 'MyTabOpenDenite',
-            \ {'is_quit' : v:true})
-function! MyTabOpenDenite(context) abort
+function! LeftDeniteTabOpen(context) abort
+    let l:mylist = []
     for target in a:context['targets']
-        let path = target['action__path']
-        if filereadable(path)
-            silent execute ':$tabnew'. path
+        let l:path = target['action__path']
+        if filereadable(expand(l:path))
+            call add(l:mylist, l:path)
         endif
-    endfor
+        let l:str = join(l:mylist, ' ')
+        silent execute ':MyTabNew 0 '. l:str
 endfunction
+call denite#custom#action('file,buffer,mark,menu',
+                        \ 'left_tabopen',
+                        \ 'LeftDeniteTabOpen', {'is_quit' : 'v:true'})
+function! RightDeniteTabOpen(context) abort
+    let l:mylist = []
+    for target in a:context['targets']
+        let l:path = target['action__path']
+        if filereadable(expand(l:path))
+            call add(l:mylist, l:path)
+        endif
+        let l:str = join(l:mylist, ' ')
+        silent execute ':MyTabNew $ '. l:str
+endfunction
+call denite#custom#action('file,buffer,mark,menu',
+                        \ 'left_tabopen',
+                        \ 'LeftDeniteTabOpen', {'is_quit' : 'v:true'})
+" new tab open keymap
+call denite#custom#map('insert', '<C-t>','<denite:do_action:left_tabopen>', 'noremap')
 
 " toggle_select
 call denite#custom#map('insert', '<C-n>', '<denite:toggle_select>')
